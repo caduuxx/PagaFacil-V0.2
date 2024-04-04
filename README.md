@@ -1,15 +1,33 @@
-﻿# PagaFacil V0.2.5
- 
-Atualizaçao <br>
+﻿# PagaFacil V0.3
+# Atualizaçao feita nessa versão 0.3 <br>
 Front 
-- Dashbord 100% concluido 
-- Bug "SobreNos" ainda em conflito
-- Bug fazerlogin.js ainda em erro <br>
+- Bug com o JavaScript na pagina "login.html" corrigido
+ <br>
+ 
+Back
+ - Adiçao do fremeork e sistema Spring <br>
+ - conexçao com o banco de dados e api 90% <br>
+<br>
+
+
+
+# Atualizaçao para a proxima versão 0.3.1 <br>
+Front 
+- Terminar Dashbord <br>
+- Bug "SobreNos" ainda em conflito <br>
+- arrumar pequenas coisas da tela index como os baloes de texto <br>
+ <br>
 
 Back
-- classes uml em java 
-- primeiro teste do metodo somarBoletos
+- refazer as classes uml em java <br>
+- Criar metodo somarBoletos <br>
+- integrar com o banco de dados <br>
+- intengrar o font com o back <br>
+<br>
 
+Documentaçao
+- Refazer a documentaçao UML <br>
+- Refazer a documentaçao geral  <br>
 
 # Descrição
 
