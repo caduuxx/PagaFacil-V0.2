@@ -14,7 +14,7 @@ function compararSenhas(){
     }
 }
 function cadastrar(){
-    fetch("http://localhost:8080/cliente",
+    fetch("http://localhost:5432/cliente",
         {
             headers:{
                 "Accept": "application/json",

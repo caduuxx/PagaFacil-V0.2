@@ -44,6 +44,9 @@ body{
     background: var(--grey);
     overflow-x: hidden;
 }
+#cadastros{
+    display: inline-flex;
+}
 .sidebar{
     position: fixed;
     top: 0;
@@ -156,7 +159,7 @@ body{
 
 .content{
     position: relative;
-    width: calc(100% - 230px);
+    max-width: calc(100% - 230px);
     left: 230px;
     transition: all 0.3s ease;
 }
