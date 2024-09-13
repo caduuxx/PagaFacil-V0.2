@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/FrontEnd/Styles/stylesidebar.css">
     <link rel="shortcut icon" href="/FrontEnd/img/Favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    
     <title>PagaFacil</title>
 </head>
 <body>
@@ -62,7 +63,6 @@
     <!-- FIM DA NAV-->
 
     <main>
-        
         <div class="header">
             <div class="left">
                 <h1>PagaFacil</h1>
@@ -77,41 +77,52 @@
                 </ul>
             </div>
         </div>
-        <div class="cadastros">
-            </div>
-                <form>
-                    <div class="form-group">
-                    <label for="exampleInputEmail1">Cadastrar Boleto</label>
-                    <br>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-            <div>
-                <form>
-                    <div class="form-group">
-                    <label for="exampleInputEmail1">Cadastrar Pedido</label>
-                    <br>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-            <div>
-                <form>
-                    <div class="form-group">
-                    <label for="exampleInputEmail1">Cadastrar Nota Fiscal</label>
-                    <br>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-                    </ul>
-                </div>
-                
-            </div>
-        </div>
+        
     </main>
-</div>
-
-
-
+        <ul>
+        <li>
+            <div class="listaBoleto">
+                <h2>Boletos cadastrados</h2>
+            </div>
+        </li>
+        <li>
+            <div class="adicionarBoleto">
+                <h2>Adicionar Boleto</h2>
+                <form>
+                    <li>NF do boleto</li>
+                    <div class="input">
+                        <input id="nfBoleto" name="nfBoleto" placeholder="NF do boleto" type="text">
+                    </div>
+                    <br>
+                    <li>Valor</li>
+                    <div class="input">
+                        <input id="Valor" name="Valor" placeholder="Valor" type="text">
+                    </div>
+                    <br>
+                    <li>Vencimento</li>
+                    <div class="input">
+                        <input id="Vencimento" name="Vencimento" placeholder="Vencimento" type="text">
+                    </div>
+                    <br>
+                    <li>Data de emissão</li>
+                    <div class="input">
+                        <input id="nfBoleto" name="nfBoleto" placeholder="NF do boleto" type="text">
+                    </div>
+                    <br>
+                    <li>Cnpj do emissor</li>
+                    <div class="input">
+                        <input id="Cnpj" name="Cnpj" placeholder="Cnpj" type="text">
+                    </div>
+                    <br>
+                    <li>Data de pagamento</li>
+                    <div class="input">
+                        <input id="dtPagamento" name="dtPagamento" placeholder="Data de pagamento" type="text">
+                    </div>
+                    <br>
+                </form>
+            </div>
+        </ul>
+    </li>
     <script src="/FrontEnd/Scripts/index.js"></script>
 </body>
 </html>
