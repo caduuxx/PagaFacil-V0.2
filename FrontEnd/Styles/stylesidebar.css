@@ -580,7 +580,10 @@ body{
 .bx-receipt{
     color: #000;
 }
-.content main .listaBoleto{
+
+/* BOLETOS  */
+
+/* .content main .listaBoleto{
     display: block;
     grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
     grid-gap: 24px;
@@ -644,4 +647,83 @@ body{
     text-align: center;
     padding: 2rem;
     font-size: 1.3rem;
+} */
+
+.listaBoleto{
+    width: 55%;
+    float: left;
+    margin-left: 2%;
+    margin-right: 2%;
+    border-radius: 20px;
+    background:  var(--light);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.adicionarBoleto {
+    width: 37%;
+    float: left;
+    margin-right: 4%;
+    border-radius: 20px;
+    background:  var(--light);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+
+.listaBoleto table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.listaBoleto table th, .listaBoleto table td {
+    padding: 10px;
+    border: 1px solid var(--light);
+}
+
+.listaBoleto table th {
+    background-color:  #63C873;
+    color: white;
+    text-align: left;
+}
+
+.listaBoleto table td {
+    text-align: left;
+}
+
+.adicionarBoleto li {
+    list-style: none;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.adicionarBoleto .input input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--light);
+    border-radius: 5px;
+}
+
+/* Botão Somar */
+#botao-somar {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#botao-somar:hover {
+    background-color: #229954;
+}
+
+/* Limpar floats */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
 }

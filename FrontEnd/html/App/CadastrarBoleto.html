@@ -18,7 +18,7 @@
         </a>
         <ul class="side-menu">
             <li><a href="/FrontEnd/html/App/carteira.html"><i class='bx bx-wallet'></i>Carteira</a></li>
-            <li><a href="/FrontEnd/html/App/CadastrarVendas.html"><i class='bx bx-store-alt' ></i>Cadastra venda</a></li>
+            <li><a href="/FrontEnd/html/App/CadastrarBoleto.html"><i class='bx bx-barcode'></i>Boleto</a></li>
             <li><a href="/FrontEnd/html/App/FazerDepositos.html"><i class='bx bx-coin'></i>Fazer deposito</a></li>
             <li><a href="/FrontEnd/html/App/adicionarPedido.html"><i class='bx bxs-bank' ></i>Adicionar pedido</a></li>
             <li><a href="/FrontEnd/html/App/suporte.html"><i class='bx bx-message-square-dots'></i>Suporte</a></li>
@@ -83,6 +83,22 @@
         <li>
             <div class="listaBoleto">
                 <h2>Boletos cadastrados</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Selecionar</th>
+                            <th>NF do Boleto</th>
+                            <th>Valor</th>
+                            <th>Vencimento</th>
+                            <th>Emissor</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-boletos">
+                        <!-- Os boletos serão inseridos aqui dinamicamente pelo JavaScript -->
+                    </tbody>
+                </table>
+                <button id="botao-somar" onclick="somarBoletos()">Somar Selecionados</button>
+                <div id="resultado-soma"></div>
             </div>
         </li>
         <li>
@@ -119,10 +135,14 @@
                         <input id="dtPagamento" name="dtPagamento" placeholder="Data de pagamento" type="text">
                     </div>
                     <br>
+                    <!-- Botão para adicionar o boleto -->
+                    <button id="botao-somar" type="button" onclick="adicionarBoleto()">Adicionar Boleto</button>
+                    <br>
                 </form>
             </div>
         </ul>
     </li>
     <script src="/FrontEnd/Scripts/index.js"></script>
+    <script src=""></script>
 </body>
 </html>

@@ -1,20 +1,32 @@
-function login() {
-    // Obtém os valores de nome de usuário e senha do formulário
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("senha").value; // Corrected id to "senha"
+function login(event) {
+    event.preventDefault(); // Previne o comportamento padrão do formulário de recarregar a página
 
-    // Aqui você pode adicionar a lógica de validação do login
-    // Vou fornecer um exemplo simples
-    if (username === "usuario" && password === "senha") {
-        // Credenciais corretas, redireciona para outra página
-        window.open("App/carteira.html"); // <----- bug aqui
-    } 
-    else {
-        // Credenciais incorretas, exibe uma mensagem de erro
-        alert("Credenciais incorretas. Tente novamente.");
-    }
+    const username = document.getElementById('username').value;
+    const senha = document.getElementById('senha').value;
+
+    // Fazer a requisição para o back-end
+    fetch('/api/auth/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({
+            'username': username,
+            'senha': senha
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Falha no login');
+        }
+        return response.text();
+    })
+    .then(data => {
+        alert('Login realizado com sucesso!');
+        // Redirecionar para outra página após o login, se necessário
+        window.location.href = '/FrontEnd/html/paginaPrincipal.html';
+    })
+    .catch(error => {
+        alert('Erro no login: ' + error.message);
+    });
 }
-// function darkMode(){
-//     var element = document.body;
-//   element.classList.toggle("dark-mode");
-// }
