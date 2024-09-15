@@ -1,12 +1,10 @@
-
-// isso aqui e pra listar o boletos
-
+// Função para listar os boletos
 document.addEventListener("DOMContentLoaded", function () {
     fetchBoletos();
 });
 
 function fetchBoletos() {
-    fetch('/api/boletos')
+    fetch('http://localhost:8080/boleto/listar') // Ajustar a URL para o endpoint correto
         .then(response => response.json())
         .then(data => {
             const tabela = document.getElementById("tabela-boletos");
@@ -16,11 +14,11 @@ function fetchBoletos() {
                 const row = document.createElement("tr");
                 
                 row.innerHTML = `
-                    <td><input type="checkbox" class="checkbox-boleto" value="${boleto.valor}"></td>
-                    <td>${boleto.nfBoleto}</td>
-                    <td>${boleto.valor}</td>
-                    <td>${boleto.vencimento}</td>
-                    <td>${boleto.emissor}</td>
+                    <td><input type="checkbox" class="checkbox-boleto" value="${boleto.id}"></td>
+                    <td>${boleto.nfboleto}</td>
+                    <td>${boleto.valor_boleto}</td>
+                    <td>${boleto.vencimento_boleto}</td>
+                    <td>${boleto.cnpj_emissor}</td>
                 `;
                 tabela.appendChild(row);
             });
@@ -28,8 +26,7 @@ function fetchBoletos() {
         .catch(error => console.error('Erro ao buscar boletos:', error));
 }
 
-// Adicionar Boleto 
-
+// Função para adicionar boleto
 function adicionarBoleto() {
     const nfBoleto = document.getElementById('nfBoleto').value;
     const valor = document.getElementById('Valor').value;
@@ -38,14 +35,15 @@ function adicionarBoleto() {
     const dtPagamento = document.getElementById('dtPagamento').value;
 
     const boleto = {
-        nfBoleto: nfBoleto,
-        valor: valor,
-        vencimento: vencimento,
-        emissor: emissor,
-        dtPagamento: dtPagamento
+        nfboleto: nfBoleto,
+        valor_boleto: valor,
+        vencimento_boleto: vencimento,
+        data_emissao_boleto: new Date().toISOString(), // Ajuste conforme o formato esperado
+        cnpj_emissor: emissor,
+        data_pagamento: dtPagamento
     };
 
-    fetch('/api/boletos', {
+    fetch('http://localhost:8080/boleto/cadastrar', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -59,5 +57,31 @@ function adicionarBoleto() {
     })
     .catch(error => {
         console.error('Erro ao adicionar boleto:', error);
+    });
+}
+
+// Função para somar boletos selecionados
+function somarBoletos() {
+    const checkboxes = document.querySelectorAll('.checkbox-boleto:checked');
+    const ids = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+    if (ids.length < 2) {
+        alert('Selecione pelo menos dois boletos para somar.');
+        return;
+    }
+
+    fetch('http://localhost:8080/boleto/somar', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(ids)
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('resultado-soma').innerText = `Total: ${data.valor_boleto}`;
+    })
+    .catch(error => {
+        console.error('Erro ao somar boletos:', error);
     });
 }
