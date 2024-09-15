@@ -57,6 +57,7 @@
 
   
   function cadastrar() {
+    console.log("Algo aconteceu");
     const icpf = document.querySelector("#CPF");
     const icnpj = document.querySelector("#CNPJ");
     const inomeSocial = document.querySelector("#nomeSocial");
@@ -66,37 +67,36 @@
     const itelefone = document.querySelector("#telefone");
     const iendereco = document.querySelector("#endereco");
   
-    console.log(senha);
+    console.log(isenha.value);
     console.log(senhaRepetida);
   
-    const usuarioData = {
-        id: Math.floor(Date.now() * Math.random()).toString(36),
-        cpf: cpf,
-        cnpj: cnpj,
-        email: email,
-        senha: senha,
-        telefone: telefone,
-        endereco: endereco,
-        
-
+    const clienteData = {
+        id: 11,
+        cpf: icpf.value,
+        cnpj: icnpj.value,
+        nome_social: inomeSocial.value,
+        email: iemail.value,
+        senha: isenha.value,
+        telefone: itelefone.value,
+        endereco: iendereco.value
     };
   
-    if(senha != confirmacaoSenha) {
+    if(isenha.value != isenhaRepetida.value) {
       throw new Error('Senhas não estão iguais.')
     }
   
-    fetch('http://localhost:8080/usuario', {
+    fetch('/api/auth/cadastrar', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+          'Content-Type': 'application/json'
       },
-      body: JSON.stringify(usuarioData)
+      body: JSON.stringify(clienteData)
     })
     .then(response => {
       if (response.ok) {
           return response.json(); // Se a resposta for positiva, converte o retorno para JSON
       } else {
-          throw new Error('Erro desconhecido.');
+          throw new Error(error.message);
       }
     })
     .then(data => {
