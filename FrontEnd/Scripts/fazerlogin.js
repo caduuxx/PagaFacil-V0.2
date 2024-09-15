@@ -5,7 +5,7 @@ function login(event) {
     const senha = document.getElementById('senha').value;
 
     // Fazer a requisição para o back-end
-    fetch('/api/auth/login', {
+    fetch('http://localhost:8080/autentificacao/login', { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -24,7 +24,7 @@ function login(event) {
     .then(data => {
         alert('Login realizado com sucesso!');
         // Redirecionar para outra página após o login, se necessário
-        window.location.href = '/FrontEnd/html/paginaPrincipal.html';
+        window.location.href = '/FrontEnd/html/App/carteira.html';
     })
     .catch(error => {
         alert('Erro no login: ' + error.message);
