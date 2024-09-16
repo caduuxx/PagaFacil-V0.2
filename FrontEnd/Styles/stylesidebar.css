@@ -583,72 +583,6 @@ body{
 
 /* BOLETOS  */
 
-/* .content main .listaBoleto{
-    display: block;
-    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-    grid-gap: 24px;
-    margin-top: 36px;
-}
-.content main .listaBoleto li{
-    padding: 24px;
-    background: var(--light);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    grid-gap: 24px;
-    cursor: pointer;
-}
-.content main .listaBoleto li .bx{
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
-    font-size: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.content main .listaBoleto li:nth-child(1) .bx {
-    background:  var(--grey);
-    color: var(--danger);
-}
-.content main .listaBoleto li:nth-child(2) .bx {
-    background:  var(--grey);
-    color: var(--success);
-}
-.listaBoleto{
-    position: fixed;
-    background-color: #c0c0c0;
-    width: 68%;
-    left: 10%;
-    height: 68rem;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    border-radius: 1%;
-}
-.adicionarBoleto{
-    position: fixed;
-    background-color: #c0c0c0;
-    width: 20%;
-    left: 79%;
-    height: 68rem;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    border-radius: 1.4%;
-}
-.listaBoleto h2{
-    text-align: center;
-    padding: 2rem;
-}
-.adicionarBoleto h2{
-    text-align: center;
-    padding: 2rem;
-}
-.adicionarBoleto form{
-    text-align: center;
-    padding: 2rem;
-    font-size: 1.3rem;
-} */
-
 .listaBoleto{
     width: 55%;
     float: left;
@@ -707,7 +641,7 @@ body{
 }
 
 /* Botão Somar */
-#botao-somar {
+#botao-somar,#botao-adicionar {
     margin-top: 20px;
     padding: 10px;
     background-color: #27ae60;

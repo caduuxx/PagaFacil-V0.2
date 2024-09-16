@@ -79,7 +79,7 @@
         </div>
         
     </main>
-        <ul>
+    <ul>
         <li>
             <div class="listaBoleto">
                 <h2>Boletos cadastrados</h2>
@@ -104,7 +104,7 @@
         <li>
             <div class="adicionarBoleto">
                 <h2>Adicionar Boleto</h2>
-                <form>
+                <form id="adicionarBoletoForm">
                     <li>NF do boleto</li>
                     <div class="input">
                         <input id="nfBoleto" name="nfBoleto" placeholder="NF do boleto" type="text">
@@ -112,31 +112,31 @@
                     <br>
                     <li>Valor</li>
                     <div class="input">
-                        <input id="Valor" name="Valor" placeholder="Valor" type="text">
+                        <input id="valor" name="valor" placeholder="Valor" type="text">
                     </div>
                     <br>
                     <li>Vencimento</li>
                     <div class="input">
-                        <input id="Vencimento" name="Vencimento" placeholder="Vencimento" type="text">
+                        <input id="vencimento" name="vencimento" placeholder="Vencimento" type="text">
                     </div>
                     <br>
                     <li>Data de emissão</li>
                     <div class="input">
-                        <input id="nfBoleto" name="nfBoleto" placeholder="NF do boleto" type="text">
+                        <input id="dataEmissao" name="dataEmissao" placeholder="Data de emissão" type="text">
                     </div>
                     <br>
                     <li>Cnpj do emissor</li>
                     <div class="input">
-                        <input id="Cnpj" name="Cnpj" placeholder="Cnpj" type="text">
+                        <input id="cnpjEmissor" name="cnpjEmissor" placeholder="Cnpj" type="text">
                     </div>
                     <br>
                     <li>Data de pagamento</li>
                     <div class="input">
-                        <input id="dtPagamento" name="dtPagamento" placeholder="Data de pagamento" type="text">
+                        <input id="dataPagamento" name="dataPagamento" placeholder="Data de pagamento" type="text">
                     </div>
                     <br>
                     <!-- Botão para adicionar o boleto -->
-                    <button id="botao-somar" type="button" onclick="adicionarBoleto()">Adicionar Boleto</button>
+                    <button id="botao-adicionar" type="submit" onclick="adicionarBoleto()">Adicionar Boleto</button>
                     <br>
                 </form>
             </div>
