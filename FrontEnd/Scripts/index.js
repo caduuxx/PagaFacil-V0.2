@@ -55,4 +55,13 @@ toggler.addEventListener('change', function () {
     }
 });
 
+// User Page
+
+document.querySelector('.btn-edit').addEventListener('click', function() {
+    alert('Abrir modal para editar perfil');
+});
+
+document.querySelector('.btn-password').addEventListener('click', function() {
+    alert('Abrir modal para alterar senha');
+});
 
