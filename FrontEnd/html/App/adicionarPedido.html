@@ -16,7 +16,7 @@
         </a>
         <ul class="side-menu">
             <li><a href="/FrontEnd/html/App/carteira.html"><i class='bx bx-wallet'></i>Carteira</a></li>
-            <li><a href="/FrontEnd/html/App/CadastrarBoleto.html"><i class='bx bx-store-alt' ></i>Cadastra venda</a></li>
+            <li><a href="/FrontEnd/html/App/CadastrarBoleto.html"><i class='bx bx-barcode'></i>Boleto</a></li>
             <li><a href="/FrontEnd/html/App/FazerDepositos.html"><i class='bx bx-coin'></i>Fazer deposito</a></li>
             <li><a href="/FrontEnd/html/App/adicionarPedido.html"><i class='bx bxs-bank' ></i>Adicionar pedido</a></li>
             <li><a href="/FrontEnd/html/App/suporte.html"><i class='bx bx-message-square-dots'></i>Suporte</a></li>
@@ -80,16 +80,52 @@
             </div>
         </div>
 
-        
-                </ul>
-            </div>
-            
+        <div class="adicionarPedido">
+            <h2>Adicionar Boleto</h2>
+            <form id="adicionarPedidoForm">
+                <li>Numero fiscal do pedido</li>
+                <div class="input">
+                    <input id="nfPedido" name="nfPedido" placeholder="NF do pedido" type="text">
+                </div>
+                <br>
+                <li>Nome Social do Emissor</li>
+                <div class="input">
+                    <input id="nomeSocialEmissor" name="nomeSocialEmissor" placeholder="Nome do emissor" type="text">
+                </div>
+                <br>
+                <li>Valor total</li>
+                <div class="input">
+                    <input id="valorTotal" name="valorTotal" placeholder="Valor total" type="text">
+                </div>
+                <br>
+                <li>Vencimento</li>
+                <div class="input">
+                    <input id="vencimento" name="vencimento" placeholder="DD/MM/AAAA" type="text">
+                    <P id="vencimentoLinha"></P>
+                </div>
+                <br>
+                <li>Data do pedido</li>
+                <div class="input">
+                    <input id="dataPedido" name="dataPedido" placeholder="DD/MM/AAAA" type="text">
+                    <P></P>
+                </div>
+                <br>
+                <li>Cnpj do emissor</li>
+                <div class="input">
+                    <input id="cnpjEmissor" name="cnpjEmissor" placeholder="Cnpj" type="text">
+                </div>
+                <br>
+                <!-- Botão para adicionar o boleto -->
+                <button id="botao-adicionar" type="button" onclick="onClick()">Adicionar Pedido</button>
+                <br>
+            </form>
         </div>
+          
     </main>
 </div>
 
 
-
+<script src="/FrontEnd/Scripts/cadastrarPedido.js"></script>
     <script src="/FrontEnd/Scripts/index.js"></script>
 </body>
 </html>

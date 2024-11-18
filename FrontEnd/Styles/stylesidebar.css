@@ -580,68 +580,210 @@ body{
 .bx-receipt{
     color: #000;
 }
-.content main .listaBoleto{
-    display: block;
-    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-    grid-gap: 24px;
-    margin-top: 36px;
-}
-.content main .listaBoleto li{
-    padding: 24px;
-    background: var(--light);
+
+/* BOLETOS  */
+
+.listaBoleto{
+    width: 55%;
+    float: left;
+    margin-left: 2%;
+    margin-right: 2%;
     border-radius: 20px;
-    display: flex;
-    align-items: center;
-    grid-gap: 24px;
+    background:  var(--light);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.adicionarBoleto {
+    width: 37%;
+    float: left;
+    margin-right: 4%;
+    border-radius: 20px;
+    background:  var(--light);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+
+.listaBoleto table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.listaBoleto table th, .listaBoleto table td {
+    padding: 10px;
+    border: 1px solid var(--light);
+}
+
+.listaBoleto table th {
+    background-color:  #63C873;
+    color: white;
+    text-align: left;
+}
+
+.listaBoleto table td {
+    text-align: left;
+}
+
+.adicionarBoleto li {
+    list-style: none;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.adicionarBoleto .input input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--light);
+    border-radius: 5px;
+}
+
+/* Botão Somar */
+#botao-somar,#botao-adicionar {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
-.content main .listaBoleto li .bx{
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
-    font-size: 36px;
+
+#botao-somar:hover {
+    background-color: #229954;
+}
+
+/* Limpar floats */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Configuraçao */
+
+.settings-section {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: var(--light);
+    border-radius: 8px;
+}
+
+.settings-section h2 {
+    margin-bottom: 15px;
+}
+
+.settings-section form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.settings-section form input[type="text"],
+.settings-section form input[type="email"],
+.settings-section form input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.settings-section form input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.settings-section form button {
+    padding: 10px 20px;
+    background-color: var(--fundo);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.settings-section form button:hover {
+    background-color: var(--fundo);
+}
+
+#delete-account {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#delete-account:hover {
+    background-color: #c82333;
+}
+
+/* Usuario */
+
+.user-info {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--light);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-details {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
-.content main .listaBoleto li:nth-child(1) .bx {
-    background:  var(--grey);
-    color: var(--danger);
+
+.profile-details .profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
 }
-.content main .listaBoleto li:nth-child(2) .bx {
-    background:  var(--grey);
-    color: var(--success);
+
+.details {
+    font-size: 16px;
 }
-.listaBoleto{
-    position: fixed;
-    background-color: #c0c0c0;
-    width: 68%;
-    left: 10%;
-    height: 68rem;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    border-radius: 1%;
+
+.details p {
+    margin: 5px 0;
 }
-.adicionarBoleto{
-    position: fixed;
-    background-color: #c0c0c0;
-    width: 20%;
-    left: 79%;
-    height: 68rem;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    border-radius: 1.4%;
+/* User btns */
+
+.user-actions {
+    margin-top: 20px;
+    text-align: center; /* Centraliza os botões horizontalmente */
 }
-.listaBoleto h2{
-    text-align: center;
-    padding: 2rem;
+
+.user-actions button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #4CAF50; /* Cor de fundo verde */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-.adicionarBoleto h2{
-    text-align: center;
-    padding: 2rem;
+
+.user-actions button:hover {
+    background-color: #45a049; /* Cor mais escura ao passar o mouse */
 }
-.adicionarBoleto form{
-    text-align: center;
-    padding: 2rem;
-    font-size: 1.3rem;
+
+.user-actions .btn-edit {
+    background-color: var(--fundo); /* Cor de fundo azul */
+}
+
+.user-actions .btn-edit:hover {
+    background-color: var(--fundo) /* Cor azul mais escura ao passar o mouse */
+}
+
+.user-actions .btn-password {
+    background-color: #e74c3c; /* Cor de fundo vermelho */
+}
+
+.user-actions .btn-password:hover {
+    background-color: #c0392b; /* Cor vermelha mais escura ao passar o mouse */
 }
