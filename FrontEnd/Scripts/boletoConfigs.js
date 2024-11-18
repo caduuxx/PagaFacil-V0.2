@@ -52,7 +52,7 @@ function verificarData(idElemento){
 function adicionarBoleto() {
     
     const boleto = {
-        nf_boleto: document.getElementById("nfBoleto").value,
+        nfboleto: document.getElementById("nfBoleto").value,
         // cod_boleto: document.getElementById("codBoleto").value,
         valor_boleto: document.getElementById("valor").value,
         // vencimento_boleto: document.getElementById("vencimento").value,
