@@ -73,3 +73,38 @@ function adicionarPedido() {
         console.error("Error:", error);
     });
 }
+
+// Listar boletos
+async function listarPedidos() {
+    try {
+        const response = await fetch("http://localhost:8080/pedido/listar");
+        if (!response.ok) {
+            throw new Error("Erro ao listar pedidos.");
+        }
+        const pedidos = await response.json();
+        atualizarTabela(pedidos);
+    } catch (error) {
+        alert(error.message);
+    }
+}
+
+
+// Atualizar tabela
+function atualizarTabela(pedidos) {
+    const tabelaPedidos = document.getElementById("tabela-pedidos");
+    tabelaPedidos.innerHTML = "";
+
+    pedidos.forEach((pedido) => {
+        const row = `
+            <tr>
+                <td><input type="checkbox" class="checkbox-pedido" data-valor="${pedido.valor_pedido}" /></td>
+                <td>${pedido.nf_pedido}</td>
+                <td>${pedido.valor_total.toFixed(2)}</td>
+                <td>${pedido.nome_social_emissor}</td>
+                <td>${pedido.cnpj_emissor}</td>
+                <td>${pedido.data_pedido}</td>
+            </tr>
+        `;
+        tabelaPedidos.insertAdjacentHTML("beforeend", row);
+    });
+}

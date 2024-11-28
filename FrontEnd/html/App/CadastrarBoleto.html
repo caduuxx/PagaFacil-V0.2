@@ -19,7 +19,7 @@
         <ul class="side-menu">
             <li><a href="/FrontEnd/html/App/carteira.html"><i class='bx bx-wallet'></i>Carteira</a></li>
             <li><a href="/FrontEnd/html/App/CadastrarBoleto.html"><i class='bx bx-barcode'></i>Boleto</a></li>
-            <li><a href="/FrontEnd/html/App/FazerDepositos.html"><i class='bx bx-coin'></i>Fazer deposito</a></li>
+            <li><a href="/FrontEnd/html/App/FazerDepositos.html"><i class='bx bx-coin'></i>Pagamentos</a></li>
             <li><a href="/FrontEnd/html/App/adicionarPedido.html"><i class='bx bxs-bank' ></i>Adicionar pedido</a></li>
             <li><a href="/FrontEnd/html/App/suporte.html"><i class='bx bx-message-square-dots'></i>Suporte</a></li>
             <li><a href="/FrontEnd/html/App/User.html"><i class='bx bx-group' ></i>Usuario</a></li>
@@ -64,85 +64,44 @@
 
     <main>
         <div class="header">
-            <div class="left">
-                <h1>PagaFacil</h1>
-                <ul class="breadcrumb">
-                    <li><a href="#">
-                        Analises
-                    </a></li>
-                    /
-                    <li><a href="#" class="active">
-                        Cadastrar Vendas
-                    </a></li>
-                </ul>
-            </div>
+            <h1>PagaFacil</h1>
         </div>
-        
+
+        <div class="listaBoleto">
+            <h2>Boletos cadastrados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Selecionar</th>
+                        <th>NF do Boleto</th>
+                        <th>Valor</th>
+                        <th>Vencimento</th>
+                        <th>Emissor</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-boletos">
+                    <!-- Conteúdo dinâmico -->
+                </tbody>
+            </table>
+            <button id="botao-somar">Somar Selecionados</button>
+            <div id="resultado-soma"></div>
+        </div>
+
+        <div class="adicionarBoleto">
+            <h2>Adicionar Boleto</h2>
+            <form id="adicionarBoletoForm">
+                <input id="nfBoleto" name="nfBoleto" placeholder="NF do boleto" type="text">
+                <input id="valor" name="valor" placeholder="Valor" type="text">
+                <input id="vencimento" name="vencimento" placeholder="Vencimento" type="text">
+                <input id="dataEmissao" name="dataEmissao" placeholder="Data de emissão" type="text">
+                <input id="cnpjEmissor" name="cnpjEmissor" placeholder="CNPJ" type="text">
+                <input id="dataPagamento" name="dataPagamento" placeholder="Data de pagamento" type="text">
+                <button type="submit">Adicionar Boleto</button>
+            </form>
+        </div>
     </main>
-    <ul>
-        <li>
-            <div class="listaBoleto">
-                <h2>Boletos cadastrados</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Selecionar</th>
-                            <th>NF do Boleto</th>
-                            <th>Valor</th>
-                            <th>Vencimento</th>
-                            <th>Emissor</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tabela-boletos">
-                        <!-- Os boletos serão inseridos aqui dinamicamente pelo JavaScript -->
-                    </tbody>
-                </table>
-                <button id="botao-somar" onclick="somarBoletos()">Somar Selecionados</button>
-                <div id="resultado-soma"></div>
-            </div>
-        </li>
-        <li>
-            <div class="adicionarBoleto">
-                <h2>Adicionar Boleto</h2>
-                <form id="adicionarBoletoForm">
-                    <li>NF do boleto</li>
-                    <div class="input">
-                        <input id="nfBoleto" name="nfBoleto" placeholder="NF do boleto" type="text">
-                    </div>
-                    <br>
-                    <li>Valor</li>
-                    <div class="input">
-                        <input id="valor" name="valor" placeholder="Valor" type="text">
-                    </div>
-                    <br>
-                    <li>Vencimento</li>
-                    <div class="input">
-                        <input id="vencimento" name="vencimento" placeholder="Vencimento" type="text">
-                    </div>
-                    <br>
-                    <li>Data de emissão</li>
-                    <div class="input">
-                        <input id="dataEmissao" name="dataEmissao" placeholder="Data de emissão" type="text">
-                    </div>
-                    <br>
-                    <li>Cnpj do emissor</li>
-                    <div class="input">
-                        <input id="cnpjEmissor" name="cnpjEmissor" placeholder="Cnpj" type="text">
-                    </div>
-                    <br>
-                    <li>Data de pagamento</li>
-                    <div class="input">
-                        <input id="dataPagamento" name="dataPagamento" placeholder="Data de pagamento" type="text">
-                    </div>
-                    <br>
-                    <!-- Botão para adicionar o boleto -->
-                    <button id="botao-adicionar" type="submit" onclick="adicionarBoleto()">Adicionar Boleto</button>
-                    <br>
-                </form>
-            </div>
-        </ul>
-    </li>
-    <script src="/FrontEnd/Scripts/index.js"></script>
-    <script src="/FrontEnd/Scripts/boletoConfigs.js"></script>
+</div>
+
+<script src="/FrontEnd/Scripts/boletoConfigs.js"></script>
 </body>
 </html>
