@@ -685,6 +685,24 @@ listaPedido {
 
 #botao-somar:hover, #botao-adicionar:hover {
     background-color: var(--hover-color);
+    color: black;
+}
+
+#botao-pagar, #botao-adicionar {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--fundo);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+#botao-pagar:hover, #botao-adicionar:hover {
+    background-color: var(--hover-color);
+    color: black;
 }
 
 /* Estilo do formulário de adicionar boleto */
@@ -833,4 +851,21 @@ listaPedido {
 
 .user-actions .btn-password:hover {
     background-color: #c0392b; /* Cor vermelha mais escura ao passar o mouse */
+}
+
+#pagamento{
+    z-index: 9999999;
+    position: absolute;
+    border: 1px solid black;
+    top: 20%;
+    left: 2%;
+    height: 100%;
+    width: 90%;
+    background-color: lightblue;
+    
+}
+#pagamento h1{
+    padding-top: 2%;
+    text-align: center;
+    padding-bottom: 1%;
 }

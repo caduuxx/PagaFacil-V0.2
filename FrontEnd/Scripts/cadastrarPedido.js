@@ -64,7 +64,7 @@ function adicionarPedido() {
     })
     .then(response => response.json())
     .then(data => {
-        alert("Boleto adicionado com sucesso!");
+        alert("Pedido adicionado com sucesso!");
         console.log(data);
         // fetchBoletoList(); 
     })
@@ -89,6 +89,7 @@ async function listarPedidos() {
 }
 
 
+
 // Atualizar tabela
 function atualizarTabela(pedidos) {
     const tabelaPedidos = document.getElementById("tabela-pedidos");
@@ -102,9 +103,9 @@ function atualizarTabela(pedidos) {
                 <td>${pedido.valor_total.toFixed(2)}</td>
                 <td>${pedido.nome_social_emissor}</td>
                 <td>${pedido.cnpj_emissor}</td>
-                <td>${pedido.data_pedido}</td>
             </tr>
         `;
         tabelaPedidos.insertAdjacentHTML("beforeend", row);
     });
 }
+document.addEventListener("DOMContentLoaded", listarPedidos);
