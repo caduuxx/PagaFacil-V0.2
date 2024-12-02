@@ -10,47 +10,78 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="shortcut icon" href="/FrontEnd/img/Favicon.ico" type="image/x-icon">
+    <script src="/FrontEnd/Scripts/script.js"></script>
     <title> PagaFacil</title>
 </head>
 <body>
     <!--Cadastrar-->
     <div id="form">
-        <form action="">
+        <form id="formulario" action="">
             <h2>Cadastrar</h2>
 
-            <label for="username">Cpf</label>
+            
+            <label for="CPF">CPF</label>
 
             <div class="input">
                 <i class='bx bxs-user-circle'></i>
-                <input id="username" name="username" placeholder="CPF" type="text">
+                <input id="CPF" name="CPF" placeholder="CPF" type="text">
+            </div>
+
+            <label for="username">Cnpj</label>
+
+            <div class="input">
+                <i class='bx bxs-user-circle'></i>
+                <input id="CNPJ" name="CNPJ" placeholder="CNPJ" type="text">
+            </div>
+
+            <label for="nomeSocial">Nome Social</label>
+
+            <div class="input">
+                <i class='bx bxs-user-circle'></i>
+                <input id="nomeSocial" name="nomeSocial" placeholder="nomeSocial" type="text">
             </div>
 
             <label for="email">Email</label>
 
             <div class="input">
                 <i class='bx bxs-envelope' ></i>
-                <input id="email" name="email"  placeholder="Email" type="text">
+                <input id="email" name="email"  placeholder="email" type="text">
             </div>
 
             <label for="senha">Senha</label>
 
             <div class="input">
                 <i class='bx bxs-lock-alt' ></i>
-                <input id="senha" name="senha" placeholder="Senha" type="password">
+                <input id="senha" name="senha" placeholder="senha" type="password">
             </div>
 
-            <label for="senha">Repitir Senha</label>
+            <label for="RepetirSenha">senha Repetida</label>
 
             <div class="input">
                 <i class='bx bxs-lock-alt' ></i>
-                <input id="senha" name="senha" placeholder="Senha" type="password">
+                <input id="senhaRepetida" name="senhaRepetida" placeholder="Repetir senha" type="password">
+            </div>
+
+            <label for="email">Telefone</label>
+
+            <div class="input">
+                <i class='bx bxs-envelope' ></i>
+                <input id="telefone" name="telefone"  placeholder="telefone" type="text">
+            </div>
+
+            <label for="email">Endereco</label>
+
+            <div class="input">
+                <i class='bx bxs-envelope' ></i>
+                <input id="endereco" name="endereco"  placeholder="endereco" type="text">
             </div>
 
             <div id="btn">
-               <a href="login.html"><button type="submit">Cadastrar</button></a>
+               <button type="submit">Cadastrar</button>
             </div>
             <!--Fim do Cadastrar-->
         </form>
+        <script src="/FrontEnd/Scripts/cadastrarCliente.js"></script>
     </div>
 </body>
 </html>

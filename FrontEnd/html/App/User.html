@@ -16,8 +16,8 @@
         </a>
         <ul class="side-menu">
             <li><a href="/FrontEnd/html/App/carteira.html"><i class='bx bx-wallet'></i>Carteira</a></li>
-            <li><a href="/FrontEnd/html/App/CadastrarVendas.html"><i class='bx bx-store-alt' ></i>Cadastra venda</a></li>
-            <li><a href="/FrontEnd/html/App/FazerDepositos.html"><i class='bx bx-coin'></i>Fazer deposito</a></li>
+            <li><a href="/FrontEnd/html/App/CadastrarBoleto.html"><i class='bx bx-barcode'></i>Boleto</a></li>
+            <li><a href="/FrontEnd/html/App/FazerDepositos.html"><i class='bx bx-coin'></i>Pagamentos</a></li>
             <li><a href="/FrontEnd/html/App/adicionarPedido.html"><i class='bx bxs-bank' ></i>Adicionar pedido</a></li>
             <li><a href="/FrontEnd/html/App/suporte.html"><i class='bx bx-message-square-dots'></i>Suporte</a></li>
             <li><a href="/FrontEnd/html/App/User.html"><i class='bx bx-group' ></i>Usuario</a></li>
@@ -47,7 +47,7 @@
                 </button>
             </div>
         </form>
-        <input type="checkbox" id=theme-toggle" hidden>
+        <input type="checkbox" id="theme-toggle" hidden>
         <label for="theme-toggle" class="theme-toggle">
         </label>
         <a href="#" class="notif">
@@ -65,13 +65,8 @@
             <div class="left">
                 <h1>PagaFacil</h1>
                 <ul class="breadcrumb">
-                    <li><a href="#">
-                        Analises
-                    </a></li>
-                    /
-                    <li><a href="#" class="active">
-                        Usuario
-                    </a></li>
+                    <li><a href="#">Analises</a></li> /
+                    <li><a href="#" class="active">Usuario</a></li>
                 </ul>
             </div>
             <div class="report">
@@ -79,12 +74,25 @@
                 <span>Baixar</span>
             </div>
         </div>
-
-                </ul>
+        
+        <!-- Adicionar seção de informações do usuário -->
+        <section class="user-info">
+            <h2>Informações do Usuário</h2>
+            <div class="profile-details">
+                <img src="/FrontEnd/img/image-removebg-preview.png" alt="Imagem de Perfil" class="profile-img">
+                <div class="details">
+                    <p><strong>Nome:</strong> João Silva</p>
+                    <p><strong>E-mail:</strong> joao.silva@example.com</p>
+                    <p><strong>Data de Cadastro:</strong> 20/10/2023</p>
+                </div>
             </div>
-            
-        </div>
+        </section>
+        <section class="user-actions">
+            <button class="btn-edit">Editar Perfil</button>
+            <button class="btn-password">Alterar Senha</button>
+        </section>
     </main>
+    
 </div>
 
 

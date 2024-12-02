@@ -44,6 +44,9 @@ body{
     background: var(--grey);
     overflow-x: hidden;
 }
+#cadastros{
+    display: inline-flex;
+}
 .sidebar{
     position: fixed;
     top: 0;
@@ -156,7 +159,7 @@ body{
 
 .content{
     position: relative;
-    width: calc(100% - 230px);
+    max-width: calc(100% - 230px);
     left: 230px;
     transition: all 0.3s ease;
 }
@@ -576,4 +579,225 @@ body{
 }
 .bx-receipt{
     color: #000;
+}
+
+/* BOLETOS  */
+
+/* Organiza o layout em duas colunas */
+.listaBoleto, .adicionarBoleto {
+    background: var(--light);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+listaBoleto {
+    width: 48%;
+    float: left;
+    margin-right: 4%;
+}
+
+.adicionarBoleto {
+    width: 48%;
+    float: left;
+    margin-left: 4%;
+}
+
+/* Responsividade: Organiza em uma coluna em telas pequenas */
+@media (max-width: 768px) {
+    .listaBoleto, .adicionarBoleto {
+        width: 100%;
+        float: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* Tabela de Boletos */
+.listaBoleto table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.listaBoleto table th, .listaBoleto table td {
+    padding: 10px;
+    border: 1px solid var(--light);
+    text-align: left;
+    font-size: 1rem;
+}
+
+.listaBoleto table th {
+    background-color: #63C873;
+    color: white;
+}
+
+.listaBoleto table td {
+    text-align: left;
+}
+
+/* Estilo dos botões */
+#botao-somar, #botao-adicionar {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--fundo);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+#botao-somar:hover, #botao-adicionar:hover {
+    background-color: var(--hover-color);
+}
+
+/* Estilo do formulário de adicionar boleto */
+.adicionarBoleto li {
+    list-style: none;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.adicionarBoleto .input input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--light);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Limpar floats */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* CONFIGURAÇAO */
+
+.settings-section {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: var(--light);
+    border-radius: 8px;
+}
+
+.settings-section h2 {
+    margin-bottom: 15px;
+}
+
+.settings-section form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.settings-section form input[type="text"],
+.settings-section form input[type="email"],
+.settings-section form input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.settings-section form input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.settings-section form button {
+    padding: 10px 20px;
+    background-color: var(--fundo);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.settings-section form button:hover {
+    background-color: var(--fundo);
+}
+
+#delete-account {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#delete-account:hover {
+    background-color: #c82333;
+}
+
+/* Usuario */
+
+.user-info {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--light);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-details {
+    display: flex;
+    align-items: center;
+}
+
+.profile-details .profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.details {
+    font-size: 16px;
+}
+
+.details p {
+    margin: 5px 0;
+}
+/* User btns */
+
+.user-actions {
+    margin-top: 20px;
+    text-align: center; /* Centraliza os botões horizontalmente */
+}
+
+.user-actions button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #4CAF50; /* Cor de fundo verde */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.user-actions button:hover {
+    background-color: #45a049; /* Cor mais escura ao passar o mouse */
+}
+
+.user-actions .btn-edit {
+    background-color: var(--fundo); /* Cor de fundo azul */
+}
+
+.user-actions .btn-edit:hover {
+    background-color: var(--fundo) /* Cor azul mais escura ao passar o mouse */
+}
+
+.user-actions .btn-password {
+    background-color: #e74c3c; /* Cor de fundo vermelho */
+}
+
+.user-actions .btn-password:hover {
+    background-color: #c0392b; /* Cor vermelha mais escura ao passar o mouse */
 }
