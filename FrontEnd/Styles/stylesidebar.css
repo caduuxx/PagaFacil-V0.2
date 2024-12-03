@@ -584,18 +584,23 @@ body{
 /* BOLETOS  */
 
 /* Organiza o layout em duas colunas */
+ .ladoALado{
+    display: inline-flex;
+    height: 850px;
+ }
 .listaBoleto, .adicionarBoleto {
     background: var(--light);
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     margin-bottom: 30px;
+
 }
 
-listaBoleto {
-    width: 48%;
+.listaBoleto {
+    width: 1200px;
+    margin-right: 50px;
     float: left;
-    margin-right: 4%;
 }
 .listaPedido, .adicionarPedido {
     background: var(--light);
@@ -605,16 +610,36 @@ listaBoleto {
     margin-bottom: 30px;
 }
 
-listaPedido {
+.listaPedido {
     width: 48%;
-    float: left;
+    /* float: left; */
     margin-right: 4%;
 }
 
 .adicionarBoleto {
-    width: 48%;
-    float: left;
-    margin-left: 4%;
+    width: 290px;
+    /* float: left; */
+    /* margin-left: 4%; */
+    text-align: center;
+    /* background: white; */
+    /* border-radius:10px; */
+    padding: 60px;
+    /* align-items: center; */
+    /* color: var(--fundo); */
+}
+
+.adicionarBoleto {
+
+}
+
+.adicionarBoleto input{
+    width: 120%;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    /* color: var(--fundo); */
+    font-size: 1rem;
+    padding-bottom: 10px;
 }
 
 /* Responsividade: Organiza em uma coluna em telas pequenas */
@@ -671,7 +696,7 @@ listaPedido {
     text-align: left;
 }
 /* Estilo dos botões */
-#botao-somar, #botao-adicionar {
+#botao-somar, #botao-adicionar, #botaoAdicionar {
     margin-top: 20px;
     padding: 10px 20px;
     background-color: var(--fundo);
@@ -683,7 +708,7 @@ listaPedido {
     transition: background-color 0.3s;
 }
 
-#botao-somar:hover, #botao-adicionar:hover {
+#botao-somar:hover, #botao-adicionar:hover, #botaoAdicionar:hover {
     background-color: var(--hover-color);
     color: black;
 }

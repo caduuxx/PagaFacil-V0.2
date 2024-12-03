@@ -237,3 +237,33 @@ body{
     display: flexbox;
     padding: 4rem;
 }
+#copy{
+    width: 400px;
+    height: 200px;
+    background: var(--fundo);
+    border: solid var(--fundo) 5px;
+    border-radius: 30px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    position: relative;
+    left: 10%;
+    margin-top: 5%;
+    display: inline-table;
+    padding: 4rem;
+}
+#copy h1{
+    text-align: center;
+    color: var(--Branco); 
+}
+#copy p{
+    text-align: center;
+    color: var(--Branco); 
+}
+.copy{
+    margin-right: 20%;
+}
+.copy h1{
+
+}
+.copy p{
+
+}

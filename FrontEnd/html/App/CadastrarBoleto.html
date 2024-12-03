@@ -67,13 +67,13 @@
         <div class="header">
             <h1>PagaFacil</h1>
         </div>
-
+        <div class="ladoALado">
         <div class="listaBoleto">
             <h2>Boletos cadastrados</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Selecionar</th>
+                        <!-- <th>Selecionar</th> -->
                         <th>Pagar</th>
                         <th>NF do Boleto</th>
                         <th>Valor</th>
@@ -93,15 +93,34 @@
         <div class="adicionarBoleto">
             <h2>Adicionar Boleto</h2>
             <form id="adicionarBoletoForm">
+                <label for="">Número Fiscal</label>
+                <br>
                 <input id="nfBoleto" name="nfBoleto" placeholder="NF do boleto" type="text">
+                <br>
+                <br>
+                <label for="">Valor do boleto</label>
                 <input id="valor" name="valor" placeholder="Valor" type="text">
+                <br>
+                <br>
+                <label for="">Vencimento do boleto</label>
                 <input id="vencimento" name="vencimento" placeholder="Vencimento" type="text">
+                <br>
+                <br>
+                <label for="">Data de emissão</label>
+                <br>
                 <input id="dataEmissao" name="dataEmissao" placeholder="Data de emissão" type="text">
+                <br>
+                <br>
+                <label for="">CNPJ do emissor</label>
                 <input id="cnpjEmissor" name="cnpjEmissor" placeholder="CNPJ" type="text">
-                <input id="dataPagamento" name="dataPagamento" placeholder="Data de pagamento" type="text">
-                <button type="submit">Adicionar Boleto</button>
+                <br>
+                <br>
+
+                
+                <button id="botaoAdicionar" type="submit">Adicionar Boleto</button>
             </form>
         </div>
+    </div>
     </main>
 </div>
 

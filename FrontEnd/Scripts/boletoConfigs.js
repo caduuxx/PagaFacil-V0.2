@@ -83,7 +83,6 @@ function atualizarTabela(boletos) {
     boletos.forEach((boleto) => {
         const row = `
             <tr>
-                <td><input type="checkbox" class="checkbox-boleto" data-valor="${boleto.valor_boleto}" /></td>
                 <td><input type="checkbox" class="checkbox-boleto-pago" data-valor="${boleto.id}" /></td>
                 <td>${boleto.nfboleto}</td>
                 <td>${boleto.valor_boleto.toFixed(2)}</td>
