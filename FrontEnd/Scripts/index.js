@@ -57,6 +57,7 @@ toggler.addEventListener('change', function () {
 
 // User Page
 
+<<<<<<< HEAD
 // document.querySelector('.btn-edit').addEventListener('click', function() {
 //     alert('Abrir modal para editar perfil');
 // });
@@ -64,4 +65,13 @@ toggler.addEventListener('change', function () {
 // document.querySelector('.btn-password').addEventListener('click', function() {
 //     alert('Abrir modal para alterar senha');
 // });
+=======
+document.querySelector('.btn-edit').addEventListener('click', function() {
+    alert('Abrir modal para editar perfil');
+});
+
+document.querySelector('.btn-password').addEventListener('click', function() {
+    alert('Abrir modal para alterar senha');
+});
+>>>>>>> future_cadu
 

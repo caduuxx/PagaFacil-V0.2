@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // //CADASTRAR
 
 
@@ -26,11 +27,14 @@ function formatarData(dataFormatada) {
 
     return vencimentoFormatado;
 }
+=======
+>>>>>>> future_cadu
 // Adicionar boleto
 document.getElementById("adicionarBoletoForm").addEventListener("submit", (event) => {
     event.preventDefault();
     const boleto = {
         nfboleto: document.getElementById("nfBoleto").value,
+<<<<<<< HEAD
         // cod_boleto: document.getElementById("codBoleto").value,
         valor_boleto: document.getElementById("valor").value,
         // vencimento_boleto: document.getElementById("vencimento").value,
@@ -38,6 +42,13 @@ document.getElementById("adicionarBoletoForm").addEventListener("submit", (event
         vencimento_boleto: formatarData("vencimento"),
         data_emissao_boleto: formatarData("dataEmissao"),
         cnpj_emissor: document.getElementById("cnpjEmissor").value,
+=======
+        valor_boleto: parseFloat(document.getElementById("valor").value),
+        vencimento_boleto: document.getElementById("vencimento").value,
+        data_emissao_boleto: document.getElementById("dataEmissao").value,
+        cnpj_emissor: document.getElementById("cnpjEmissor").value,
+        data_pagamento: document.getElementById("dataPagamento").value
+>>>>>>> future_cadu
     };
 
     fetch("http://localhost:8080/boleto/cadastrar", {
@@ -74,7 +85,10 @@ async function listarBoletos() {
     }
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> future_cadu
 // Atualizar tabela
 function atualizarTabela(boletos) {
     const tabelaBoletos = document.getElementById("tabela-boletos");
@@ -83,7 +97,11 @@ function atualizarTabela(boletos) {
     boletos.forEach((boleto) => {
         const row = `
             <tr>
+<<<<<<< HEAD
                 <td><input type="checkbox" class="checkbox-boleto-pago" data-valor="${boleto.id}" /></td>
+=======
+                <td><input type="checkbox" class="checkbox-boleto" data-valor="${boleto.valor_boleto}" /></td>
+>>>>>>> future_cadu
                 <td>${boleto.nfboleto}</td>
                 <td>${boleto.valor_boleto.toFixed(2)}</td>
                 <td>${boleto.vencimento_boleto}</td>
@@ -106,6 +124,7 @@ document.getElementById("botao-somar").addEventListener("click", () => {
     document.getElementById("resultado-soma").textContent = `Total: R$ ${soma.toFixed(2)}`;
 });
 
+<<<<<<< HEAD
 document.getElementById("botao-pagar").addEventListener("click", () => {
     const checkboxes = document.querySelectorAll(".checkbox-boleto:checked");
     let soma = 0;
@@ -120,3 +139,7 @@ document.getElementById("botao-pagar").addEventListener("click", () => {
 
 // Carregar boletos ao inicializar a página
 document.addEventListener("DOMContentLoaded", listarBoletos);
+=======
+// Carregar boletos ao inicializar a página
+document.addEventListener("DOMContentLoaded", listarBoletos);
+>>>>>>> future_cadu
