@@ -19,15 +19,24 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
         },
         body: JSON.stringify(cliente)
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erro ao cadastrar cliente');
+        }
+        return response.json();
+        ;
+    })
     .then(data => {
         alert("Cliente cadastrado com sucesso!");
         console.log(data);
+       
     })
     .catch((error) => {
         alert("Erro ao cadastrar cliente.");
         console.error("Error:", error);
     });
+    localStorage.setItem('valueText', cliente.cnpj);
+    window.location.assign("app/carteira.html")
 });
 
 

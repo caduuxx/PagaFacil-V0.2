@@ -55,7 +55,7 @@
             <i class='bx bx-bell' ></i>
             <span class="count">12</span>
         </a>
-        <a href="#" class="profile">
+        <a href="#" id="icone" class="profile">
             <img src="/FrontEnd/img/image-removebg-preview.png" height="100px">
         </a>
     </nav>
@@ -77,59 +77,59 @@
             </div>
         </div>
         <div class="ladoALado">
-        <div class="listaBoleto">
-            <h2>Boletos cadastrados</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <!-- <th>Selecionar</th> -->
-                        <th>Pagar</th>
-                        <th>NF do Boleto</th>
-                        <th>Valor</th>
-                        <th>Vencimento</th>
-                        <th>Emissor</th>
-                    </tr>
-                </thead>
-                <tbody id="tabela-boletos">
-                    <!-- Conteúdo dinâmico -->
-                </tbody>
-            </table>
-            <button id="botao-somar">Somar Selecionados</button>
-            <button id="botao-pagar">Pagar</button>
-            <div id="resultado-soma"></div>
-        </div>
+            <div class="listaBoleto">
+                <h2>Boletos cadastrados</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <!-- <th>Selecionar</th> -->
+                            <th>Pagar</th>
+                            <th>NF do Boleto</th>
+                            <th>Valor</th>
+                            <th>Vencimento</th>
+                            <th>Emissor</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-boletos">
+                        <!-- Conteúdo dinâmico -->
+                    </tbody>
+                </table>
+                <button id="botao-somar">Somar Selecionados</button>
+                <button id="botao-pagar">Pagar</button>
+                <div id="resultado-soma"></div>
+            </div>
 
-        <div class="adicionarBoleto">
-            <h2>Adicionar Boleto</h2>
-            <form id="adicionarBoletoForm">
-                <label for="">Número Fiscal</label>
-                <br>
-                <input id="nfBoleto" name="nfBoleto" placeholder="NF do boleto" type="text">
-                <br>
-                <br>
-                <label for="">Valor do boleto</label>
-                <input id="valor" name="valor" placeholder="Valor" type="text">
-                <br>
-                <br>
-                <label for="">Vencimento do boleto</label>
-                <input id="vencimento" name="vencimento" placeholder="Vencimento" type="text">
-                <br>
-                <br>
-                <label for="">Data de emissão</label>
-                <br>
-                <input id="dataEmissao" name="dataEmissao" placeholder="Data de emissão" type="text">
-                <br>
-                <br>
-                <label for="">CNPJ do emissor</label>
-                <input id="cnpjEmissor" name="cnpjEmissor" placeholder="CNPJ" type="text">
-                <br>
-                <br>
+            <div class="adicionarBoleto">
+                <h2>Adicionar Boleto</h2>
+                <form id="adicionarBoletoForm">
+                    <label for="">Número Fiscal</label>
+                    <br>
+                    <input id="nfBoleto" name="nfBoleto" placeholder="NF do boleto" type="text">
+                    <br>
+                    <br>
+                    <label for="">Valor do boleto</label>
+                    <input id="valor" name="valor" placeholder="Valor" type="text">
+                    <br>
+                    <br>
+                    <label for="">Vencimento do boleto</label>
+                    <input id="vencimento" name="vencimento" placeholder="Vencimento" type="text">
+                    <br>
+                    <br>
+                    <label for="">Data de emissão</label>
+                    <br>
+                    <input id="dataEmissao" name="dataEmissao" placeholder="Data de emissão" type="text">
+                    <br>
+                    <br>
+                    <label for="">CNPJ do emissor</label>
+                    <input id="cnpjEmissor" name="cnpjEmissor" placeholder="CNPJ" type="text">
+                    <br>
+                    <br>
 
-                
-                <button id="botaoAdicionar" type="submit">Adicionar Boleto</button>
-            </form>
+                    
+                    <button id="botaoAdicionar" type="submit">Adicionar Boleto</button>
+                </form>
+            </div>
         </div>
-    </div>
     </main>
 </div>
 

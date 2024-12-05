@@ -583,12 +583,12 @@ body{
 
 /* BOLETOS  */
 
-/* Organiza o layout em duas colunas */
+
 .ladoALado {
     display: inline-flex;
-    flex-wrap: wrap; /* Permite quebrar para nova linha em telas menores */
-    height: auto; /* Ajusta a altura dinamicamente */
-    justify-content: space-between; /* Garante alinhamento proporcional */
+    /* flex-wrap: wrap;  */
+    /* height: auto;  */
+    justify-content: first baseline; 
 }
 
 .listaBoleto, .adicionarBoleto {
@@ -600,19 +600,23 @@ body{
 }
 
 .listaBoleto {
-    width: 70%; /* Ajusta dinamicamente para ocupar mais espaço */
-    margin-right: 4%;
+    width: 120%; 
+    border-collapse: collapse;
+    /* margin-right: 4%; */
     float: left;
+    padding-right: 50%;
 }
 
 .adicionarBoleto {
-    width: 25%; /* Ajusta para telas médias */
+    margin-left: 4%;
+    width: 200%; 
     text-align: center;
-    padding: 30px;
+    padding: 60px;
+
 }
 
 .adicionarBoleto input {
-    width: 100%; /* Adapta para caber no container */
+    width: 100%; 
     border: none;
     outline: none;
     font-family: 'Poppins', sans-serif;
@@ -620,27 +624,10 @@ body{
     padding-bottom: 10px;
 }
 
-/* Responsividade: Organiza em uma coluna em telas pequenas */
-@media (max-width: 768px) {
-    .ladoALado {
-        flex-direction: column; /* Alterna para layout vertical */
-        align-items: center;
-    }
-
-    .listaBoleto, .adicionarBoleto {
-        width: 100%; /* Ocupa toda a largura disponível */
-        float: none;
-        margin: 0 0 20px 0; /* Remove margem lateral */
-    }
-
-    .adicionarBoleto {
-        padding: 20px; /* Reduz padding em telas pequenas */
-    }
-}
 
 /* Tabela de Boletos */
 .listaBoleto table {
-    width: 100%;
+    width: 190%;
     border-collapse: collapse;
     margin-top: 15px;
 }
@@ -723,29 +710,24 @@ body{
 /* PEDIDOS  */
 
 /* Organiza o layout em duas colunas */
-.ladoALado {
-    display: inline-flex;
-    flex-wrap: wrap; /* Permite quebrar para nova linha em telas menores */
-    height: auto; /* Ajusta a altura dinamicamente */
-    justify-content: space-between; /* Garante alinhamento proporcional */
-}
+
 
 .listaPedido, .adicionarPedido {
     background: var(--light);
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 
 .listaPedido {
-    width: 70%; /* Ajusta dinamicamente para ocupar mais espaço */
-    margin-right: 4%;
+    width: 70%; 
+    /* margin-right: 4%; */
     float: left;
 }
 
 .adicionarPedido {
-    width: 26%; /* Ajusta para telas médias */
+    width: 26%;
     text-align: center;
     padding: 30px;
 }

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // //CADASTRAR
 
 
@@ -27,14 +26,11 @@ function formatarData(dataFormatada) {
 
     return vencimentoFormatado;
 }
-=======
->>>>>>> future_cadu
 // Adicionar boleto
 document.getElementById("adicionarBoletoForm").addEventListener("submit", (event) => {
     event.preventDefault();
     const boleto = {
         nfboleto: document.getElementById("nfBoleto").value,
-<<<<<<< HEAD
         // cod_boleto: document.getElementById("codBoleto").value,
         valor_boleto: document.getElementById("valor").value,
         // vencimento_boleto: document.getElementById("vencimento").value,
@@ -42,13 +38,6 @@ document.getElementById("adicionarBoletoForm").addEventListener("submit", (event
         vencimento_boleto: formatarData("vencimento"),
         data_emissao_boleto: formatarData("dataEmissao"),
         cnpj_emissor: document.getElementById("cnpjEmissor").value,
-=======
-        valor_boleto: parseFloat(document.getElementById("valor").value),
-        vencimento_boleto: document.getElementById("vencimento").value,
-        data_emissao_boleto: document.getElementById("dataEmissao").value,
-        cnpj_emissor: document.getElementById("cnpjEmissor").value,
-        data_pagamento: document.getElementById("dataPagamento").value
->>>>>>> future_cadu
     };
 
     fetch("http://localhost:8080/boleto/cadastrar", {
@@ -85,10 +74,7 @@ async function listarBoletos() {
     }
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> future_cadu
 // Atualizar tabela
 function atualizarTabela(boletos) {
     const tabelaBoletos = document.getElementById("tabela-boletos");
@@ -97,15 +83,11 @@ function atualizarTabela(boletos) {
     boletos.forEach((boleto) => {
         const row = `
             <tr>
-<<<<<<< HEAD
-                <td><input type="checkbox" class="checkbox-boleto-pago" data-valor="${boleto.id}" /></td>
-=======
-                <td><input type="checkbox" class="checkbox-boleto" data-valor="${boleto.valor_boleto}" /></td>
->>>>>>> future_cadu
-                <td>${boleto.nfboleto}</td>
-                <td>${boleto.valor_boleto.toFixed(2)}</td>
-                <td>${boleto.vencimento_boleto}</td>
-                <td>${boleto.cnpj_emissor}</td>
+                <td><input type="checkbox" class="checkbox-boleto" data-valor="${boleto.id}" /></td>
+                <td id="nf_${boleto.id}">${boleto.nfboleto}</td>
+                <td id="valor_${boleto.id}">${boleto.valor_boleto.toFixed(2)}</td>
+                <td id="vencimento_${boleto.id}">${boleto.vencimento_boleto}</td>
+                <td id="cnpj_${boleto.id}">${boleto.cnpj_emissor}</td>
             </tr>
         `;
         tabelaBoletos.insertAdjacentHTML("beforeend", row);
@@ -117,29 +99,54 @@ document.getElementById("botao-somar").addEventListener("click", () => {
     const checkboxes = document.querySelectorAll(".checkbox-boleto:checked");
     let soma = 0;
 
-    checkboxes.forEach((checkbox) => {
+    checkboxes.forEach(checkbox => {
         soma += parseFloat(checkbox.getAttribute("data-valor"));
     });
 
     document.getElementById("resultado-soma").textContent = `Total: R$ ${soma.toFixed(2)}`;
 });
 
-<<<<<<< HEAD
+
 document.getElementById("botao-pagar").addEventListener("click", () => {
     const checkboxes = document.querySelectorAll(".checkbox-boleto:checked");
-    let soma = 0;
+    let pagamento = 0;
+    let dataAtual = new Date();
 
     checkboxes.forEach((checkbox) => {
-        soma += parseFloat(checkbox.getAttribute("data-valor"));
-    });
 
-    document.getElementById("resultado-soma").textContent = `Total: R$ ${soma.toFixed(2)}`;
+        pagamento += parseFloat(checkbox.getAttribute("data-valor"));
+        
+        
+    });
+console.log(pagamento);
+console.log("valor_" + pagamento);
+console.log(document.getElementById("valor_" + pagamento).textContent);
+
+        const pagamentos = {
+            valor_pagamento: document.getElementById("valor_" + pagamento).textContent,
+            forma_de_pagamento: "PIX",
+            data_pagamento: dataAtual,
+            valor: document.getElementById("valor_" + pagamento).textContent,
+            cod_boleto: pagamento,
+            cod_cliente: 0,
+        };
+    
+        fetch("http://localhost:8080/pagamento/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(pagamentos)
+        })
+        console.log(pagamentos);
+    
 });
 
 
+
+var icone = document.getElementById("icone");
+            icone =  localStorage.getItem('valueText');
+            console.log(icone);
+
 // Carregar boletos ao inicializar a página
 document.addEventListener("DOMContentLoaded", listarBoletos);
-=======
-// Carregar boletos ao inicializar a página
-document.addEventListener("DOMContentLoaded", listarBoletos);
->>>>>>> future_cadu
