@@ -61,9 +61,9 @@ toggler.addEventListener('change', function () {
 //     alert('Abrir modal para editar perfil');
 // });
 
-document.querySelector('.btn-password').addEventListener('click', function() {
-    alert('Abrir modal para alterar senha');
-});
+// document.querySelector('.btn-password').addEventListener('click', function() {
+//     alert('Abrir modal para alterar senha');
+// });
 
 var icone = document.getElementById("icone");
             icone =  localStorage.getItem('valueText');

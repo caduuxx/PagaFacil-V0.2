@@ -7,6 +7,8 @@ async function listarBoletos() {
         }
         const boletos = await response.json();
         atualizarTabela(boletos);
+        totalBoleto =  localStorage.getItem('valorBoletos');
+        document.getElementById("totalAPagar").innerText = "R$ "+totalBoleto;
     } catch (error) {
         alert(error.message);
     }
@@ -18,8 +20,8 @@ function atualizarTabela(boletos) {
     const tabelaBoletos = document.getElementById("mini-tabela-boletos");
     tabelaBoletos.innerHTML = "";
 
-    const boletosFiltrados = boletos.filter((boleto) => boleto.cnpj_cliente == icone || boleto.pago == 1);
-
+    const boletosFiltrados = boletos.filter((boleto) => boleto.cnpj_cliente == icone && boleto.pago == 0);
+    var totalBoleto = 0;
 
     boletosFiltrados.forEach((boleto) => {
         const row = `
@@ -29,9 +31,12 @@ function atualizarTabela(boletos) {
                 <td id="vencimento_${boleto.id}">${boleto.vencimento_boleto}</td>
             </tr>
         `;
-        
+        totalBoleto = totalBoleto + boleto.valor_boleto;
         tabelaBoletos.insertAdjacentHTML("beforeend", row);
+        console.log(totalBoleto);
+        localStorage.setItem('valorBoletos', totalBoleto);
     });
+    
 }
 
 var icone = document.getElementById("icone");

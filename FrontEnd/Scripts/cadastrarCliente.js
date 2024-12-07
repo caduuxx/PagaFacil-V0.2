@@ -36,7 +36,7 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
         console.error("Error:", error);
     });
     localStorage.setItem('valueText', cliente.cnpj);
-    window.location.assign("app/carteira.html")
+    window.location.assign("app/home.html")
 });
 
 

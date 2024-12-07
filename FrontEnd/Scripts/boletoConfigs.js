@@ -31,10 +31,7 @@ document.getElementById("adicionarBoletoForm").addEventListener("submit", (event
     event.preventDefault();
     const boleto = {
         nfboleto: document.getElementById("nfBoleto").value,
-        // cod_boleto: document.getElementById("codBoleto").value,
         valor_boleto: document.getElementById("valor").value,
-        // vencimento_boleto: document.getElementById("vencimento").value,
-        // vencimento_boleto: document.getElementById("dataEmissao").value,
         vencimento_boleto: formatarData("vencimento"),
         data_emissao_boleto: formatarData("dataEmissao"),
         cnpj_emissor: document.getElementById("cnpjEmissor").value,
@@ -80,13 +77,20 @@ async function listarBoletos() {
 function atualizarTabela(boletos) {
     const tabelaBoletos = document.getElementById("tabela-boletos");
     tabelaBoletos.innerHTML = "";
+    var estilo;
 
-    const boletosFiltrados = boletos.filter((boleto) => boleto.cnpj_cliente == icone);
+    const boletosFiltrados = boletos.filter((boleto) => boleto.cnpj_cliente == icone );
 
 
     boletosFiltrados.forEach((boleto) => {
+        if (boleto.pago){
+            estilo = "color: green;"
+        }
+        else{
+            estilo = "color: red;"
+        }
         const row = `
-            <tr>
+            <tr style="${estilo}">
                 <td><input type="checkbox" class="checkbox-boleto" data-valor="${boleto.id}" /></td>
                 <td id="nf_${boleto.id}">${boleto.nfboleto}</td>
                 <td id="valor_${boleto.id}">${boleto.valor_boleto.toFixed(2)}</td>
@@ -94,17 +98,10 @@ function atualizarTabela(boletos) {
                 <td id="cnpj_${boleto.id}">${boleto.cnpj_emissor}</td>
             </tr>
         `;
-        const id_boleto = boleto.id;
-        const dadosAtualizados = {
-            "nfboleto": boleto.nfboleto,
-            "valor_boleto": boleto.valor_boleto,
-            "vencimento_boleto": boleto.vencimento_boleto,
-            "data_emissao_boleto": boleto.data_emissao_boleto,
-            "cnpj_emissor": boleto.cnpj_emissor,
-            "data_pagamento": null,
-            "cnpj_cliente":boleto.cnpj_cliente,
-            "pago":1
-        };
+        
+        
+        
+        
         tabelaBoletos.insertAdjacentHTML("beforeend", row);
     });
 }
@@ -144,9 +141,21 @@ console.log(document.getElementById("valor_" + pagamento).textContent);
             data_pagamento: dataAtual,
             valor: document.getElementById("valor_" + pagamento).textContent,
             cod_boleto: pagamento,
-            cod_cliente: 0,
+            cod_cliente: icone,
         };
-    
+        localStorage.setItem(
+            'dadosBoleto',
+            JSON.stringify({
+              'nfboleto': document.getElementById("nf_"+pagamento).textContent,
+              'valor_boleto': document.getElementById("valor_"+pagamento).textContent,
+              'vencimento_boleto': document.getElementById("vencimento_"+pagamento).textContent,
+              'data_emissao_boleto': "2005-02-12",
+              'cnpj_emissor': document.getElementById("cnpj_"+pagamento).textContent,
+              'data_pagamento': null,
+              'cnpj_cliente': icone,
+              'pago': 1
+            })
+          );
         fetch("http://localhost:8080/pagamento/cadastrar", {
             method: "POST",
             headers: {
@@ -154,20 +163,26 @@ console.log(document.getElementById("valor_" + pagamento).textContent);
             },
             body: JSON.stringify(pagamentos)
         })
-        
-        atualizarDados(id_boleto, dadosAtualizados);
+        dadosAtualizados = localStorage.getItem('dadosBoleto');
+        boletoboleto =  pagamento;
+        atualizarDados(boletoboleto, dadosAtualizados);
+        const id_boleto = pagamentos.cod_boleto;
+        localStorage.setItem('idBoleto', id_boleto );
         console.log(pagamentos);
+        console.log(dadosAtualizados);
+        console.log(boletoboleto);
     
 });
 
-async function atualizarDados(id, dadosAtualizados) {
-    try {
-        const resposta = await fetch(`http://localhost:8080/boleto/atualizar/${id_boleto}`, {
+async function atualizarDados(boletoboleto, dadosAtualizados) {
+    try {   
+        
+        const resposta = await fetch(`http://localhost:8080/boleto/atualizar/${boletoboleto}`, {
             method: "PUT", 
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(dadosAtualizados),
+            body: dadosAtualizados,
         });
 
         if (!resposta.ok) {
