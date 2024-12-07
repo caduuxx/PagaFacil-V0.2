@@ -15,7 +15,7 @@
             <img src="/FrontEnd/img/LogoPagaFacil.Branco.png" alt="PagaFacil" height="120px">
         </a>
         <ul class="side-menu">
-            <li><a href="/FrontEnd/html/App/carteira.html"><i class='bx bx-wallet'></i>Carteira</a></li>
+            <li><a href="/FrontEnd/html/App/home.html"><i class='bx bx-wallet'></i>Home</a></li>
             <li><a href="/FrontEnd/html/App/CadastrarBoleto.html"><i class='bx bx-barcode'></i>Boleto</a></li>
             <li><a href="/FrontEnd/html/App/adicionarPedido.html"><i class='bx bxs-bank' ></i>Pedido</a></li>
             <li><a href="/FrontEnd/html/App/User.html"><i class='bx bx-group' ></i>Usuario</a></li>
@@ -69,23 +69,23 @@
         </div>
 
         <div class="ladoALado">
-            <div class="listaBoleto">
+            <div class="listaPedido">
                 <h2>Pedidos cadastrados</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Selecionar</th>
                         <th>NF do Pedido</th>
                         <th>Valor</th>
                         <th>Vencimento</th>
                         <th>Emissor</th>
+                        <th>CNPJ Emissor</th>
                     </tr>
                 </thead>
                 <tbody id="tabela-pedidos">
                     <!-- Conteúdo dinâmico -->
                 </tbody>
             </table>
-            <button id="botao-somar">Somar Selecionados</button>
+            <!-- <button id="botao-somar">Somar Selecionados</button> -->
             <div id="resultado-soma"></div>
         </div>
     

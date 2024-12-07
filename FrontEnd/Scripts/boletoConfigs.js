@@ -38,8 +38,9 @@ document.getElementById("adicionarBoletoForm").addEventListener("submit", (event
         vencimento_boleto: formatarData("vencimento"),
         data_emissao_boleto: formatarData("dataEmissao"),
         cnpj_emissor: document.getElementById("cnpjEmissor").value,
+        cnpj_cliente: icone
     };
-
+    console.log(boleto);
     fetch("http://localhost:8080/boleto/cadastrar", {
         method: "POST",
         headers: {
@@ -80,7 +81,10 @@ function atualizarTabela(boletos) {
     const tabelaBoletos = document.getElementById("tabela-boletos");
     tabelaBoletos.innerHTML = "";
 
-    boletos.forEach((boleto) => {
+    const boletosFiltrados = boletos.filter((boleto) => boleto.cnpj_cliente == icone);
+
+
+    boletosFiltrados.forEach((boleto) => {
         const row = `
             <tr>
                 <td><input type="checkbox" class="checkbox-boleto" data-valor="${boleto.id}" /></td>
@@ -90,9 +94,11 @@ function atualizarTabela(boletos) {
                 <td id="cnpj_${boleto.id}">${boleto.cnpj_emissor}</td>
             </tr>
         `;
+        const id_boleto = boleto.id;
         tabelaBoletos.insertAdjacentHTML("beforeend", row);
     });
 }
+
 
 // Somar boletos selecionados
 document.getElementById("botao-somar").addEventListener("click", () => {
@@ -142,7 +148,36 @@ console.log(document.getElementById("valor_" + pagamento).textContent);
     
 });
 
+async function atualizarDados(id, dadosAtualizados) {
+    try {
+        const resposta = await fetch(`http://localhost:8080/boleto/atualizar/${id_boleto}`, {
+            method: "PUT", 
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(dadosAtualizados),
+        });
 
+        if (!resposta.ok) {
+            throw new Error(`Erro na atualização: ${resposta.status}`);
+        }
+
+        const resultado = await resposta.json();
+        console.log("Recurso atualizado com sucesso:", resultado);
+    } catch (erro) {
+        console.error("Erro na requisição PUT:", erro);
+    }
+}
+
+
+
+const dadosAtualizados = {
+    nome: "Novo Nome",
+    email: "novoemail@example.com",
+    telefone: "123456789",
+};
+
+atualizarDados(id, dadosAtualizados);
 
 var icone = document.getElementById("icone");
             icone =  localStorage.getItem('valueText');

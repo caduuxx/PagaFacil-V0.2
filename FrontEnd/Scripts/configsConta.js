@@ -24,3 +24,7 @@ document.getElementById('account-form').addEventListener('submit', function(e) {
         console.error('Erro:', error);
     });
 });
+
+var icone = document.getElementById("icone");
+            icone =  localStorage.getItem('valueText');
+            console.log(icone);

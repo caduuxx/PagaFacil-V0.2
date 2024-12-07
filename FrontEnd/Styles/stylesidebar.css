@@ -19,7 +19,7 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     font-family: 'Poppins',sans-serif; 
 }
 .bx{
@@ -600,9 +600,9 @@ body{
 }
 
 .listaBoleto {
-    width: 120%; 
+    width: 100%; 
     border-collapse: collapse;
-    /* margin-right: 4%; */
+    margin-right: 4%;
     float: left;
     padding-right: 50%;
 }
@@ -627,7 +627,7 @@ body{
 
 /* Tabela de Boletos */
 .listaBoleto table {
-    width: 190%;
+    width: 180%;
     border-collapse: collapse;
     margin-top: 15px;
 }
@@ -722,18 +722,21 @@ body{
 
 .listaPedido {
     width: 70%; 
+    height: 60%;
     /* margin-right: 4%; */
     float: left;
 }
 
 .adicionarPedido {
-    width: 26%;
+    width: 360%;
+    
     text-align: center;
     padding: 30px;
+    margin-left: 4%;
 }
 
 .adicionarPedido input {
-    width: 100%; /* Adapta para caber no container */
+    width: 120%; 
     border: none;
     outline: none;
     font-family: 'Poppins', sans-serif;
@@ -762,6 +765,7 @@ body{
 /* Tabela de Boletos */
 .listaPedido table {
     width: 100%;
+    /* height: 2rem; */
     border-collapse: collapse;
     margin-top: 15px;
 }
