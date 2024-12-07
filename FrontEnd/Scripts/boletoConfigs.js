@@ -95,6 +95,16 @@ function atualizarTabela(boletos) {
             </tr>
         `;
         const id_boleto = boleto.id;
+        const dadosAtualizados = {
+            "nfboleto": boleto.nfboleto,
+            "valor_boleto": boleto.valor_boleto,
+            "vencimento_boleto": boleto.vencimento_boleto,
+            "data_emissao_boleto": boleto.data_emissao_boleto,
+            "cnpj_emissor": boleto.cnpj_emissor,
+            "data_pagamento": null,
+            "cnpj_cliente":boleto.cnpj_cliente,
+            "pago":1
+        };
         tabelaBoletos.insertAdjacentHTML("beforeend", row);
     });
 }
@@ -144,6 +154,8 @@ console.log(document.getElementById("valor_" + pagamento).textContent);
             },
             body: JSON.stringify(pagamentos)
         })
+        
+        atualizarDados(id_boleto, dadosAtualizados);
         console.log(pagamentos);
     
 });
@@ -171,13 +183,7 @@ async function atualizarDados(id, dadosAtualizados) {
 
 
 
-const dadosAtualizados = {
-    nome: "Novo Nome",
-    email: "novoemail@example.com",
-    telefone: "123456789",
-};
 
-atualizarDados(id, dadosAtualizados);
 
 var icone = document.getElementById("icone");
             icone =  localStorage.getItem('valueText');
