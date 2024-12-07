@@ -15,11 +15,9 @@
             <img src="/FrontEnd/img/LogoPagaFacil.Branco.png" alt="PagaFacil" height="120px">
         </a>
         <ul class="side-menu">
-            <li><a href="/FrontEnd/html/App/carteira.html"><i class='bx bx-wallet'></i>Carteira</a></li>
-            <li><a href="/FrontEnd/html/App/CadastrarVendas.html"><i class='bx bx-store-alt' ></i>Cadastra venda</a></li>
-            <li><a href="/FrontEnd/html/App/FazerDepositos.html"><i class='bx bx-coin'></i>Fazer deposito</a></li>
-            <li><a href="/FrontEnd/html/App/adicionarPedido.html"><i class='bx bxs-bank' ></i>Adicionar pedido</a></li>
-            <li><a href="/FrontEnd/html/App/suporte.html"><i class='bx bx-message-square-dots'></i>Suporte</a></li>
+            <li><a href="/FrontEnd/html/App/home.html"><i class='bx bx-wallet'></i>Home</a></li>
+            <li><a href="/FrontEnd/html/App/CadastrarBoleto.html"><i class='bx bx-barcode'></i>Boleto</a></li>
+            <li><a href="/FrontEnd/html/App/adicionarPedido.html"><i class='bx bxs-bank' ></i>Pedido</a></li>
             <li><a href="/FrontEnd/html/App/User.html"><i class='bx bx-group' ></i>Usuario</a></li>
             <li><a href="/FrontEnd/html/App/Configuracao.html"><i class='bx bx-cog' ></i>Configuração</a></li>
         </ul>
@@ -40,14 +38,8 @@
     <nav>
         <i class='bx bx-menu'></i>
         <form action="#">
-            <div class="form-input">
-                <input type="search" placeholder="Search...">
-                <button class="search-btn" type="submit">
-                    <i class='bx bx-search' ></i>
-                </button>
-            </div>
         </form>
-        <input type="checkbox" id=theme-toggle" hidden>
+        <input type="checkbox" id="theme-toggle" hidden>
         <label for="theme-toggle" class="theme-toggle">
         </label>
         <a href="#" class="notif">
@@ -70,26 +62,80 @@
                     </a></li>
                     /
                     <li><a href="#" class="active">
-                        Adicionar Pedido
+                        Pedido
                     </a></li>
                 </ul>
             </div>
-            <div class="report">
-                <i class='bx bx-cloud-download'></i>
-                <span>Baixar</span>
-            </div>
         </div>
 
-        
-                </ul>
-            </div>
-            
+        <div class="ladoALado">
+            <div class="listaPedido">
+                <h2>Pedidos cadastrados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>NF do Pedido</th>
+                        <th>Valor</th>
+                        <th>Vencimento</th>
+                        <th>Emissor</th>
+                        <th>CNPJ Emissor</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-pedidos">
+                    <!-- Conteúdo dinâmico -->
+                </tbody>
+            </table>
+            <!-- <button id="botao-somar">Somar Selecionados</button> -->
+            <div id="resultado-soma"></div>
         </div>
+    
+            <div class="adicionarPedido">
+                <h2>Adicionar Pedido</h2>
+            <form id="adicionarPedidoForm">
+                <li>Numero fiscal do pedido</li>
+                <div class="input">
+                    <input id="nfPedido" name="nfPedido" placeholder="NF do pedido" type="text">
+                </div>
+                <br>
+                <li>Nome Social do Emissor</li>
+                <div class="input">
+                    <input id="nomeSocialEmissor" name="nomeSocialEmissor" placeholder="Nome do emissor" type="text">
+                </div>
+                <br>
+                <li>Valor total</li>
+                <div class="input">
+                    <input id="valorTotal" name="valorTotal" placeholder="Valor total" type="text">
+                </div>
+                <br>
+                <li>Vencimento</li>
+                <div class="input">
+                    <input id="vencimento" name="vencimento" placeholder="DD/MM/AAAA" type="text">
+                    <P id="vencimentoLinha"></P>
+                </div>
+                <br>
+                <li>Data do pedido</li>
+                <div class="input">
+                    <input id="dataPedido" name="dataPedido" placeholder="DD/MM/AAAA" type="text">
+                    <P></P>
+                </div>
+                <br>
+                <li>Cnpj do emissor</li>
+                <div class="input">
+                    <input id="cnpjEmissor" name="cnpjEmissor" placeholder="Cnpj" type="text">
+                </div>
+                <br>
+                <!-- Botão para adicionar o boleto -->
+                <button id="botao-adicionar" type="button" onclick="onClick()">Adicionar Pedido</button>
+                <br>
+            </form>
+            </div>
+        </div>
+          
     </main>
 </div>
 
 
-
+<script src="/FrontEnd/Scripts/cadastrarPedido.js"></script>
     <script src="/FrontEnd/Scripts/index.js"></script>
 </body>
 </html>

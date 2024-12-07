@@ -24,8 +24,7 @@ function login(event) {
     .then(data => {
         alert('Login realizado com sucesso!');
         // Redirecionar para outra página após o login, se necessário
-        localStorage.setItem('valueText', cliente.cnpj);
-        window.location.assign("app/home.html")
+        window.location.href = '/FrontEnd/html/App/carteira.html';
     })
     .catch(error => {
         alert('Erro no login: ' + error.message);
